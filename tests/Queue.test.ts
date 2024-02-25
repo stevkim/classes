@@ -21,29 +21,29 @@ describe('Queue', () => {
     expect(queue.queue).toStrictEqual([0]);
     queue.clearQueue();
 
-    for (const value in list) {
-      queue.enqueue(list[value]);
+    for (const value of list) {
+      queue.enqueue(value);
     }
     expect(queue.queue).toStrictEqual(list);
   });
 
-  test('Successfully removes from the queue', () => {
+  test('Successfully removes from the Queue', () => {
     queue.enqueue(0);
     expect(queue.queue).toStrictEqual([0]);
     queue.dequeue();
     expect(queue.queue).toStrictEqual([]);
 
-    for (const value in list) {
-      queue.enqueue(list[value]);
+    for (const value of list) {
+      queue.enqueue(value);
     }
     expect(queue.queue).toStrictEqual(list);
     queue.dequeue();
     expect(queue.queue).toStrictEqual([1, 2, 3, 4]);
   });
 
-  test('Successfully gets a random value from queue', () => {
-    for (const value in list) {
-      queue.enqueue(list[value]);
+  test('Successfully gets a random value from Queue', () => {
+    for (const value of list) {
+      queue.enqueue(value);
     }
 
     for (let i = 0; i < 3; i++) {
