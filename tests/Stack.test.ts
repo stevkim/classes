@@ -19,7 +19,7 @@ describe('Stack', () => {
     expect(stack.stack).toStrictEqual([0]);
     stack.clearStack();
 
-    for (const value of list) {
+    for (let value of list) {
       stack.push(value);
     }
     expect(stack.stack).toStrictEqual(list);
@@ -34,7 +34,7 @@ describe('Stack', () => {
     expect(stack.stack).toStrictEqual([]);
     expect(removed).toBe(0);
 
-    for (const value of list) {
+    for (let value of list) {
       stack.push(value);
     }
     expect(stack.stack).toStrictEqual(list);
@@ -44,7 +44,7 @@ describe('Stack', () => {
   });
 
   test('Successfully gets a random value from Stack', () => {
-    for (const value of list) {
+    for (let value of list) {
       stack.push(value);
     }
 

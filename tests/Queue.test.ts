@@ -21,7 +21,7 @@ describe('Queue', () => {
     expect(queue.queue).toStrictEqual([0]);
     queue.clearQueue();
 
-    for (const value of list) {
+    for (let value of list) {
       queue.enqueue(value);
     }
     expect(queue.queue).toStrictEqual(list);
@@ -33,7 +33,7 @@ describe('Queue', () => {
     queue.dequeue();
     expect(queue.queue).toStrictEqual([]);
 
-    for (const value of list) {
+    for (let value of list) {
       queue.enqueue(value);
     }
     expect(queue.queue).toStrictEqual(list);
@@ -42,7 +42,7 @@ describe('Queue', () => {
   });
 
   test('Successfully gets a random value from Queue', () => {
-    for (const value of list) {
+    for (let value of list) {
       queue.enqueue(value);
     }
 
